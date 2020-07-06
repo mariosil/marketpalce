@@ -1,7 +1,8 @@
 user1:
   email: 'common.user_1@mail.com'
   encrypted_password: <%= Devise::Encryptor.digest(User, '123123') %>
-
+  authentication_token: <%= Devise.friendly_token %>
 user2:
   email: 'common.user_2@mail.com'
   encrypted_password: <%= Devise::Encryptor.digest(User, '234234') %>
+  authentication_token: <%= Devise.friendly_token %>

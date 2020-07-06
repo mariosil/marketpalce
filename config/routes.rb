@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  # https://www.rubydoc.info/github/plataformatec/devise/master/ActionDispatch/Routing/Mapper#devise_for-instance_method
+  # skip: tell which controller you want to skip routes from being created
+  devise_for :users, skip: :all
+
   namespace :api do
     namespace :v1 do
-      post 'sessions/create'
-      get 'sessions/destroy'
+      devise_scope :users do
+        post 'sessions/create'
+        delete 'sessions/destroy'
+      end
     end
   end
   # devise_for :users
