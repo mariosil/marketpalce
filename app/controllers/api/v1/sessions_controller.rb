@@ -8,7 +8,7 @@ module Api
 
       def create
         if @user&.valid_password? login_params[:password]
-          render json: @user.as_json(only: %i[id email authentication_token]),
+          render json: @user,
                  status: :created
         else
           head :unauthorized

@@ -47,3 +47,5 @@ end
 
 gem 'devise'
 gem 'simple_token_authentication'
+
+gem 'active_model_serializers'
