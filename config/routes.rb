@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         post 'sessions/create'
         delete 'sessions/destroy'
       end
+      get 'people/whoami'
     end
   end
   # devise_for :users

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Api::V1::Sessions', type: :request do
@@ -40,6 +42,13 @@ RSpec.describe 'Api::V1::Sessions', type: :request do
       }
       expect(response).to have_http_status(:no_content)
       expect { user.reload }.to change(user, :authentication_token)
+    end
+    context 'if no authentication headers were provided' do
+      it 'returns http success' do
+        sign_in user
+        delete '/api/v1/sessions/destroy'
+        expect(response).to have_http_status(:unauthorized)
+      end
     end
   end
 end
