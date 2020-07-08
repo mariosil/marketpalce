@@ -1,0 +1,15 @@
+18_person:
+  firstname: <%= Faker::Name.name %>
+  lastname: <%= Faker::Name.last_name %>
+  age: 18
+  user: user1
+under_age_person:
+  firstname: <%= Faker::Name.name %>
+  lastname: <%= Faker::Name.last_name %>
+  age: 17
+  user: user2
+medium_age_person:
+  firstname: <%= Faker::Name.name %>
+  lastname: <%= Faker::Name.last_name %>
+  age: 40
+  user: user3
